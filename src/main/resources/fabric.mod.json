@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "mob_randomizer",
+  "version": "${version}",
+
+  "name": "Mob Randomizer",
+  "description": "Randomize Mob Spawn in Minecraft!",
+  "authors": [
+    "NoNumberMan",
+    "Twitch Chat"
+  ],
+  "contact": {
+    "homepage": "https://nonumberstudios.com/"
+  },
+
+  "license": "MIT",
+  "icon": "assets/mob_randomizer/mob_randomizer_icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.nonumberstudios.mob_randomizer.MobRandomizerMod"
+    ]
+  },
+  "mixins": [
+    "mob_randomizer.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

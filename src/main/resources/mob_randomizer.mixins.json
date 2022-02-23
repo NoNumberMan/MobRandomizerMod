@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.nonumberstudios.mob_randomizer.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ServerWorldMixin",
+    "SpawnHelperMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
