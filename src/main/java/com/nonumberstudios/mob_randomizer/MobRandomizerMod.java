@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
@@ -22,6 +23,7 @@ import java.util.*;
 
 public class MobRandomizerMod implements ModInitializer {
 	//TODO make excluded list expandable
+	//TODO wandering trader, mobs that spawn with structures such as bastions
 
 	public static final String MODID = "mob_randomizer";
 	public static final Logger LOGGER = LoggerFactory.getLogger( MODID );
@@ -29,12 +31,32 @@ public class MobRandomizerMod implements ModInitializer {
 			EntityType.ZOMBIE_HORSE, EntityType.GIANT, EntityType.ILLUSIONER, EntityType.ENDER_DRAGON, EntityType.WITHER, EntityType.ELDER_GUARDIAN
 	};
 
-	private static final EntityType<?>[] defaultBlazeMappings = new EntityType<?>[]{
-			EntityType.COW
+	private static final EntityType<?>[] defaultBlazeMappings = new EntityType<?>[] {
+			EntityType.AXOLOTL, EntityType.BAT, EntityType.CAT,  EntityType.CHICKEN, EntityType.COD,
+			EntityType.COW, EntityType.DONKEY, EntityType.FOX, EntityType.GLOW_SQUID, EntityType.HORSE,
+			EntityType.MOOSHROOM, EntityType.MULE, EntityType.OCELOT, EntityType.PARROT, EntityType.PIG,
+			EntityType.PUFFERFISH, EntityType.RABBIT, EntityType.SALMON, EntityType.SHEEP, EntityType.SQUID,
+			EntityType.STRIDER, EntityType.TROPICAL_FISH, EntityType.TURTLE, EntityType.VILLAGER,
+			EntityType.BEE, EntityType.CAVE_SPIDER, EntityType.DOLPHIN, EntityType.ENDERMAN, EntityType.LLAMA,
+			EntityType.PANDA, EntityType.PIGLIN, EntityType.POLAR_BEAR, EntityType.SPIDER, EntityType.WOLF,
+			EntityType.ZOMBIFIED_PIGLIN, EntityType.BLAZE, EntityType.CREEPER, EntityType.DROWNED, EntityType.GHAST,
+			EntityType.GUARDIAN, EntityType.HOGLIN, EntityType.HUSK, EntityType.MAGMA_CUBE, EntityType.PHANTOM,
+			EntityType.PILLAGER, EntityType.RAVAGER, EntityType.SKELETON, EntityType.SLIME, EntityType.STRAY,
+			EntityType.WITCH, EntityType.WITHER_SKELETON, EntityType.ZOGLIN, EntityType.ZOMBIE, EntityType.ZOMBIE_VILLAGER
 	};
 
 	private static final EntityType<?>[] defaultEndermanMappings = new EntityType<?>[]{
-			EntityType.SHEEP
+			EntityType.AXOLOTL, EntityType.BAT, EntityType.CAT,  EntityType.CHICKEN, EntityType.COD,
+			EntityType.COW, EntityType.DONKEY, EntityType.FOX, EntityType.GLOW_SQUID, EntityType.HORSE,
+			EntityType.MOOSHROOM, EntityType.MULE, EntityType.OCELOT, EntityType.PARROT, EntityType.PIG,
+			EntityType.PUFFERFISH, EntityType.RABBIT, EntityType.SALMON, EntityType.SHEEP, EntityType.SQUID,
+			EntityType.STRIDER, EntityType.TROPICAL_FISH, EntityType.TURTLE, EntityType.VILLAGER,
+			EntityType.BEE, EntityType.CAVE_SPIDER, EntityType.DOLPHIN, EntityType.ENDERMAN, EntityType.LLAMA,
+			EntityType.PANDA, EntityType.PIGLIN, EntityType.POLAR_BEAR, EntityType.SPIDER, EntityType.WOLF,
+			EntityType.ZOMBIFIED_PIGLIN, EntityType.BLAZE, EntityType.CREEPER, EntityType.DROWNED, EntityType.GHAST,
+			EntityType.GUARDIAN, EntityType.HOGLIN, EntityType.HUSK, EntityType.MAGMA_CUBE, EntityType.PHANTOM,
+			EntityType.PILLAGER, EntityType.RAVAGER, EntityType.SKELETON, EntityType.SLIME, EntityType.STRAY,
+			EntityType.WITCH, EntityType.WITHER_SKELETON, EntityType.ZOGLIN, EntityType.ZOMBIE, EntityType.ZOMBIE_VILLAGER
 	};
 
 	private static final Map<Integer, ArrayList<Integer>> allowedMappings = new HashMap<>();
